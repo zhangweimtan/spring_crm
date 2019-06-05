@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 建立类与表的映射 -->
+	<class name="com.myweb.crm.domain.Customer" batch-size="5" table="cst_customer">
+		<!-- 建立类中的属性与表中的主键对应 -->
+		<id name="cust_id" column="cust_id" >
+			<generator class="native"/>
+		</id>
+		
+		<!-- 建立类中的普通的属性和表的字段的对应 -->
+		<property name="cust_name"  />
+		<property name="cust_source" />
+		<property name="cust_industry" />
+		<property name="cust_level" />
+		<property name="cust_phone" />
+		<property name="cust_mobile" />
+
+<!--		配置一对多的set属性-->
+<!--		<set name="linkManSet" cascade="save-update" inverse="true" batch-size="4">-->
+<!--			<key column="lkm_cust_id"></key>-->
+<!--			<one-to-many class="com.myweb.ssh.domain.LinkMan"/>-->
+<!--		</set>-->
+
+
+	</class>
+</hibernate-mapping>
